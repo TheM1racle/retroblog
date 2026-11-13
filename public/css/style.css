@@ -1,0 +1,301 @@
+@import url('https://googleapis.com');
+
+:root {
+    --bg: #121212;
+    --text: #e2e2e2;
+    --muted: #7a7a7a;
+    --accent: #d89b52;
+    --border: #383838;
+    --surface: #1b1b1b;
+    --danger: #e06c75;
+}
+
+body.light-theme {
+    --bg: #f7f5f0;
+    --text: #1c1c1c;
+    --muted: #666666;
+    --accent: #b5651d;
+    --border: #cccccc;
+    --surface: #ece9e2;
+    --danger: #c93b46;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    line-height: 1.65;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+}
+
+/* Шапка и баннер */
+.banner {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 14px;
+    image-rendering: pixelated;
+    border: 1px solid var(--border);
+}
+
+.ascii-banner {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 18px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.2;
+    color: var(--accent);
+    margin-bottom: 14px;
+    overflow-x: auto;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 26px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 26px;
+}
+
+.navbar a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+.theme-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+    padding: 2px;
+}
+
+/* Хлебные крошки */
+.breadcrumbs {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 18px;
+}
+
+.breadcrumbs a {
+    color: var(--muted);
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    color: var(--text);
+}
+
+/* Типографика и посты */
+h1 {
+    font-size: 28px;
+    line-height: 1.25;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--text);
+}
+
+.meta {
+    font-size: 13px;
+    color: var(--accent);
+    margin-bottom: 28px;
+}
+
+.post-list {
+    list-style: none;
+}
+
+.post-item {
+    padding: 14px 0;
+    border-bottom: 1px dashed var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+}
+
+.post-item a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.post-item a:hover {
+    color: var(--accent);
+}
+
+.post-date {
+    color: var(--accent);
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+/* Контент внутри статьи */
+.content p {
+    margin-bottom: 20px;
+}
+
+.content strong {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+body.light-theme .content strong {
+    color: #000000;
+}
+
+.content h2, .content h3 {
+    margin: 28px 0 14px;
+}
+
+.content ul, .content ol {
+    margin: 0 0 20px 24px;
+}
+
+.content code {
+    background: var(--surface);
+    padding: 2px 6px;
+    border: 1px solid var(--border);
+    font-size: 14px;
+}
+
+.content pre {
+    background: var(--surface);
+    padding: 14px;
+    border: 1px solid var(--border);
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+.content blockquote {
+    border-left: 3px solid var(--accent);
+    padding-left: 14px;
+    color: var(--muted);
+    margin-bottom: 20px;
+}
+
+/* Формы и кнопки */
+.form-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: var(--muted);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+    width: 100%;
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 10px 12px;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.btn {
+    display: inline-block;
+    background: var(--text);
+    color: var(--bg);
+    border: 1px solid var(--text);
+    padding: 8px 16px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #121212;
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+.btn-danger {
+    background: transparent;
+    color: var(--danger);
+    border: 1px solid var(--danger);
+}
+
+.btn-danger:hover {
+    background: var(--danger);
+    border-color: var(--danger);
+    color: #fff;
+}
+
+.admin-bar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 24px;
+    padding: 10px 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    font-size: 13px;
+}
+
+.error {
+    color: var(--danger);
+    font-size: 13px;
+    margin-bottom: 14px;
+}
+
+.footer {
+    margin-top: 60px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.footer a {
+    color: var(--muted);
+    text-decoration: none;
+}
